@@ -4,13 +4,14 @@
 
 ### 1.1 기술 스택
 - **Java 21**
-- **Spring Boot 3.5.6**
+- **Spring Boot 3.3.5**
 - **Spring Security** (JWT 인증)
-- **Spring Data JPA** + **QueryDSL**
+- **Spring Data JPA** + **QueryDSL 5.0.0**
 - **PostgreSQL** (데이터베이스)
 - **Redis** (토큰 저장소)
-- **SpringDoc OpenAPI** (Swagger)
+- **SpringDoc OpenAPI 2.6.0** (Swagger)
 - **Gradle** (빌드 도구)
+- **패키지명**: `mall.pico_friends_api`
 
 ### 1.2 Base URL
 ```
@@ -64,7 +65,43 @@ http://localhost:8080/swagger-ui.html
 
 ## 2. 인증 API (`/api/auth`)
 
-### 2.1 로그인
+### 2.1 회원가입
+```
+POST /api/auth/signup
+```
+
+**Request Body:**
+```json
+{
+  "email": "user@example.com",
+  "password": "password123",
+  "name": "홍길동",
+  "mobileNumber": "01012345678",
+  "schoolCode": "SEOUL_UNIV"
+}
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "data": {
+    "id": 1,
+    "email": "user@example.com",
+    "name": "홍길동",
+    "mobileNumber": "01012345678",
+    "schoolCode": "SEOUL_UNIV",
+    "status": "PENDING"
+  },
+  "message": "회원가입 성공"
+}
+```
+
+**참고:**
+- 회원가입 시 초기 상태는 PENDING (승인 대기)
+- 비밀번호는 BCrypt로 암호화되어 저장됨
+
+### 2.2 로그인
 ```
 POST /api/auth/login
 ```
@@ -72,8 +109,8 @@ POST /api/auth/login
 **Request Body:**
 ```json
 {
-  "userid": "user001",
-  "userpw": "password123"
+  "email": "user@example.com",
+  "password": "password123"
 }
 ```
 
@@ -103,7 +140,7 @@ POST /api/auth/login
 - Access Token은 Redis에 저장 (1시간 TTL)
 - Refresh Token은 Redis에 저장 (7일 TTL)
 
-### 2.2 로그아웃
+### 2.3 로그아웃
 ```
 POST /api/auth/logout
 ```
@@ -125,7 +162,7 @@ Authorization: Bearer {access_token}
 1. Access Token을 Redis 블랙리스트에 추가
 2. Refresh Token 삭제
 
-### 2.3 토큰 갱신
+### 2.4 토큰 갱신
 ```
 POST /api/auth/refresh
 ```

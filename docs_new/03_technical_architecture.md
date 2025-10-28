@@ -44,14 +44,14 @@
 
 #### Spring Boot
 - **Java 21**
-- **Spring Boot 3.5.6**
+- **Spring Boot 3.3.5**
 - **주요 의존성**:
   - **Spring Web**: REST API
   - **Spring Data JPA**: ORM
-  - **QueryDSL**: 복잡한 동적 쿼리 및 통계 처리
+  - **QueryDSL 5.0.0**: 복잡한 동적 쿼리 및 통계 처리
   - **Spring Security**: 인증/인가
   - **Spring Validation**: 입력값 검증
-  - **SpringDoc OpenAPI**: Swagger API 문서화
+  - **SpringDoc OpenAPI 2.6.0**: Swagger API 문서화
   - **Lombok**: 보일러플레이트 코드 제거
   - **Gradle**: 빌드 도구
 
@@ -85,7 +85,7 @@
 ### 2.3 Database
 
 #### PostgreSQL
-- **버전**: PostgreSQL 13.1+
+- **버전**: PostgreSQL 13+ (14 권장)
 - **주요 기능**:
   - **JSONB 데이터 타입**: 설문조사 응답 데이터 저장
   - **GIN 인덱스**: JSONB 검색 성능 최적화
@@ -223,28 +223,35 @@
 
 **패키지 구조**
 ```
-com.pico.friends
-  ├── config              # 설정 (Security, JPA, etc.)
+mall.pico_friends_api
+  ├── common              # 공통 클래스 (ApiResponse, PageResponse 등)
+  ├── config              # 설정 (Security, JPA, QueryDSL, etc.)
   ├── controller          # REST API Controllers
-  │   ├── auth            # 인증 관련
-  │   ├── user            # 사용자 관리
-  │   ├── pharmacy        # 약국 관리
-  │   ├── task            # 업무 관리
-  │   ├── visit           # 방문 기록
-  │   ├── survey          # 설문조사
-  │   ├── notice          # 공지사항
-  │   └── statistics      # 통계
+  │   ├── AuthController         # 인증 관련 (/api/auth)
+  │   ├── BoardController        # 게시판 (/api/boards)
+  │   ├── PharmacyController     # 약국 관리 (/api/pharmacies)
+  │   ├── ReportController       # 리포트/설문 (/api/reports)
+  │   └── StatisticsController   # 통계 (/api/statistics)
   ├── service             # 비즈니스 로직
-  ├── repository          # 데이터 액세스
-  ├── domain              # 엔티티 모델
+  ├── domain              # 도메인 모델
   │   ├── entity          # JPA 엔티티
-  │   └── dto             # Data Transfer Objects
-  ├── security            # 보안 관련
-  │   ├── jwt             # JWT 토큰 처리
-  │   └── filter          # Security Filters
-  ├── exception           # 예외 처리
-  ├── util                # 유틸리티
-  └── Application.java    # Main Application
+  │   │   ├── base        # 기본 엔티티 (BaseEntity 등)
+  │   │   ├── CommonCode
+  │   │   ├── FileInfo
+  │   │   ├── PicoFriendsBoard
+  │   │   ├── PicoFriendsMember
+  │   │   ├── PicoFriendsPharmacy
+  │   │   ├── PicoFriendsPharmacyHistory
+  │   │   ├── PicoFriendsReport
+  │   │   └── User
+  │   └── repository      # 데이터 액세스 (Spring Data JPA)
+  ├── dto                 # Data Transfer Objects
+  │   ├── request         # API 요청 DTO
+  │   └── response        # API 응답 DTO
+  ├── security            # 보안 관련 (JWT, Filter 등)
+  ├── exception           # 예외 처리 (Custom Exceptions, Handler)
+  ├── util                # 유틸리티 (SecurityUtil 등)
+  └── PicoFriendsApiApplication.java    # Main Application
 ```
 
 #### 3.2.3 Data Layer (Database)
