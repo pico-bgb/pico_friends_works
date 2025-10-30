@@ -25,20 +25,41 @@
 #### UI/UX 라이브러리
 - **UI 컴포넌트**:
   - Tailwind CSS (스타일링)
-  - Shadcn/ui 또는 Material-UI (컴포넌트 라이브러리)
+  - Shadcn/ui (컴포넌트 라이브러리)
 - **폼 관리**: React Hook Form
+- **HTTP 클라이언트**: axios
 - **상태 관리**:
-  - Zustand 또는 Redux Toolkit
-  - React Query (서버 상태 관리)
-- **차트/그래프**: Recharts 또는 Chart.js
+  - Zustand (클라이언트 상태 관리)
+  - @tanstack/react-query (서버 상태 관리)
+- **차트/그래프**: Recharts
 - **날짜 선택**: react-datepicker
-- **리치 텍스트 에디터**: TinyMCE 또는 Quill
+- **리치 텍스트 에디터**: Tiptap (@tiptap/react, @tiptap/starter-kit)
 
 #### 모바일 최적화
 - Responsive Design
 - Touch-friendly UI
 - 이미지 압축 및 업로드
 - Progressive Web App (PWA) 지원 고려
+
+#### 주요 라이브러리 상세
+
+| 라이브러리 | 버전 | 용도 |
+|-----------|------|------|
+| **next** | 14+ | React 프레임워크, SSR/SSG |
+| **react** | 19 | UI 라이브러리 |
+| **typescript** | 5+ | 타입 안정성 |
+| **tailwindcss** | 3+ | CSS 프레임워크 |
+| **shadcn/ui** | latest | UI 컴포넌트 라이브러리 |
+| **axios** | latest | HTTP 클라이언트 (API 통신) |
+| **zustand** | latest | 전역 상태 관리 (경량, 간편) |
+| **@tanstack/react-query** | 5+ | 서버 상태 관리, 캐싱, 동기화 |
+| **react-hook-form** | latest | 폼 상태 관리 및 유효성 검사 |
+| **zod** | latest | 스키마 검증 (react-hook-form과 통합) |
+| **recharts** | latest | 차트 및 데이터 시각화 |
+| **react-datepicker** | latest | 날짜/시간 선택 UI |
+| **@tiptap/react** | latest | 리치 텍스트 에디터 (헤드리스) |
+| **@tiptap/starter-kit** | latest | Tiptap 기본 확장 기능 |
+| **lucide-react** | latest | 아이콘 라이브러리 |
 
 ### 2.2 Backend
 
@@ -269,6 +290,118 @@ mall.pico_friends_api
 4. 이후 모든 API 요청에 토큰을 Authorization 헤더에 포함
 5. Backend는 JWT 필터에서 토큰 검증 및 권한 확인
 
+#### Access Token 자동 갱신 (프론트엔드 필수 구현)
+
+**필요성:**
+- Access Token은 1시간 후 만료되므로 사용자 경험을 위해 자동 갱신 필수
+- 사용자가 작업 중 갑자기 로그아웃되는 것을 방지
+
+**구현 방법:**
+
+1. **Axios/Fetch Interceptor 패턴**
+   - API 응답에서 401 Unauthorized 감지
+   - 자동으로 `/api/auth/refresh` 호출
+   - 새 Access Token으로 원래 요청 재시도
+
+2. **선제적 갱신 패턴 (권장)**
+   - 토큰 만료 시간을 추적 (JWT payload의 exp 값)
+   - 만료 5분 전에 자동으로 갱신 요청
+   - 백그라운드에서 처리하여 사용자 경험 향상
+
+3. **구현 예시 (React/Next.js)**
+   ```typescript
+   // lib/api/client.ts
+   import axios from 'axios';
+
+   const apiClient = axios.create({
+     baseURL: process.env.NEXT_PUBLIC_API_URL,
+   });
+
+   // 요청 인터셉터: Access Token 자동 추가
+   apiClient.interceptors.request.use(config => {
+     const token = localStorage.getItem('accessToken');
+     if (token) {
+       config.headers.Authorization = `Bearer ${token}`;
+     }
+     return config;
+   });
+
+   // 응답 인터셉터: 401 에러 시 자동 갱신
+   apiClient.interceptors.response.use(
+     response => response,
+     async error => {
+       const originalRequest = error.config;
+
+       if (error.response?.status === 401 && !originalRequest._retry) {
+         originalRequest._retry = true;
+
+         try {
+           const refreshToken = localStorage.getItem('refreshToken');
+           const { data } = await axios.post('/api/auth/refresh', {
+             refreshToken
+           });
+
+           localStorage.setItem('accessToken', data.data.accessToken);
+           originalRequest.headers.Authorization = `Bearer ${data.data.accessToken}`;
+
+           return apiClient(originalRequest);
+         } catch (refreshError) {
+           // Refresh Token도 만료된 경우 로그인 페이지로 이동
+           localStorage.clear();
+           window.location.href = '/login';
+           return Promise.reject(refreshError);
+         }
+       }
+
+       return Promise.reject(error);
+     }
+   );
+   ```
+
+4. **선제적 갱신 Hook (React)**
+   ```typescript
+   // hooks/useTokenRefresh.ts
+   import { useEffect } from 'react';
+
+   export function useTokenRefresh() {
+     useEffect(() => {
+       const checkAndRefresh = async () => {
+         const token = localStorage.getItem('accessToken');
+         if (!token) return;
+
+         // JWT payload 디코드
+         const payload = JSON.parse(atob(token.split('.')[1]));
+         const expiresAt = payload.exp * 1000;
+         const now = Date.now();
+
+         // 만료 5분 전이면 갱신
+         if (expiresAt - now < 5 * 60 * 1000) {
+           const refreshToken = localStorage.getItem('refreshToken');
+           const response = await fetch('/api/auth/refresh', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ refreshToken })
+           });
+
+           const data = await response.json();
+           localStorage.setItem('accessToken', data.data.accessToken);
+         }
+       };
+
+       // 1분마다 체크
+       const interval = setInterval(checkAndRefresh, 60000);
+       checkAndRefresh(); // 즉시 한 번 실행
+
+       return () => clearInterval(interval);
+     }, []);
+   }
+   ```
+
+**추가 고려사항:**
+- **다중 탭 지원**: localStorage 이벤트로 탭 간 토큰 동기화
+- **네트워크 오류**: 갱신 실패 시 재시도 로직 (최대 3회)
+- **보안**: Refresh Token은 httpOnly cookie 사용 권장 (XSS 방지)
+
 #### 역할 기반 접근 제어
 - **ROLE_ADMIN**: 관리자 (백오피스 전체 기능)
 - **ROLE_FIELD_AGENT**: 피코프렌즈 (모바일 웹 기능)
@@ -417,8 +550,22 @@ mall.pico_friends_api
 # Node.js 18+ 설치
 # npm/yarn 설치
 
-# 의존성 설치
+# 필수 의존성 설치
 npm install
+
+# 주요 라이브러리 설치
+npm install next@14 react@19 react-dom@19
+npm install typescript @types/react @types/node
+npm install tailwindcss postcss autoprefixer
+npm install axios zustand @tanstack/react-query
+npm install react-hook-form @hookform/resolvers zod
+npm install recharts
+npm install react-datepicker @types/react-datepicker
+npm install @tiptap/react @tiptap/starter-kit
+npm install lucide-react class-variance-authority clsx tailwind-merge
+
+# Shadcn UI 설정
+npx shadcn-ui@latest init
 
 # 개발 서버 실행
 npm run dev
