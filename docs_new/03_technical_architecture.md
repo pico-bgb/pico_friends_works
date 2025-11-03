@@ -404,8 +404,8 @@ mall.pico_friends_api
 
 #### 역할 기반 접근 제어
 - **ROLE_ADMIN**: 관리자 (백오피스 전체 기능)
-- **ROLE_FIELD_AGENT**: 피코프렌즈 (모바일 웹 기능)
-- **ROLE_PENDING**: 승인 대기 사용자 (제한된 접근)
+- **ROLE_VIEWER**: 뷰어 (조회 전용)
+- **ROLE_USER**: 피코프렌즈 (모바일 웹 기능)
 
 ### 4.2 이미지 업로드
 
