@@ -1,0 +1,4415 @@
+{
+	"info": {
+		"_postman_id": "5bcbb522-121b-44ab-8c2d-519405c83d5e",
+		"name": "피코프렌즈 API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49690951",
+		"_collection_link": "https://pico-innov-developteam.postman.co/workspace/Pico-Innov-DevelopTeam-Workspac~72647d42-5ac8-45d6-8774-42054571b670/collection/49690851-5bcbb522-121b-44ab-8c2d-519405c83d5e?action=share&source=collection_link&creator=49690951"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "로그인",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ckuneam@gmail.com\",\r\n    \"password\":\"12341234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "로그인",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ckuneam@gmail.com\",\r\n    \"password\":\"12341234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/auth/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 01:43:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJja3VuZWFtQGdtYWlsLmNvbSIsIm5hbWUiOiLqtIDrpqzsnpAiLCJyb2xlIjoiQURNSU4iLCJzdGF0dXMiOiJBQ1RJVkUiLCJzY2hvb2xDb2RlIjoiNzAwMTQ1MyIsImlhdCI6MTc2MTg3NTAyMywiZXhwIjoxNzYxODc4NjIzfQ.WzBZPFfqedtngPa-2RO0rARVPrPjRR56roGtxAcQrQZDcPdqX2cFztDz_oCiDYThwQCDzWbs3XfKvSS9HjRQQw\",\n        \"refreshToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzYxODc1MDIzLCJleHAiOjE3NjI0Nzk4MjN9.V3a5CQj-rv5j1zwzsMW5NabjrtZUGTgkPYF4orKmufLNY7xuNtFZCIc-ygtEy4ftFOaksdIVmWPS545ulrlpOg\",\n        \"expiresIn\": 3600000\n    },\n    \"message\": \"로그인 성공\",\n    \"timestamp\": \"2025-10-31T10:43:44.4835802\"\n}"
+						}
+					]
+				},
+				{
+					"name": "회원가입",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test2@naver.com\",\r\n    \"password\":\"12341234\",\r\n    \"name\":\"테스트유저2\",\r\n    \"mobileNumber\":\"01051532654\",\r\n    \"schoolCode\":\"7040791\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/auth/signup",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "회원가입",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ckuneam@naver.com\",\r\n    \"password\":\"12341234\",\r\n    \"name\":\"테스터\",\r\n    \"phoneNumber\":\"01012341234\",\r\n    \"schoolCode\":\"7040820\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/auth/signup",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 02:11:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"테스터\",\n        \"email\": \"ckuneam@naver.com\",\n        \"mobileNumber\": \"01012341234\",\n        \"schoolCode\": \"7040820\",\n        \"status\": \"PENDING\",\n        \"role\": \"USER\",\n        \"createDate\": \"2025-10-31T11:11:43.423909\"\n    },\n    \"message\": \"회원가입 성공\",\n    \"timestamp\": \"2025-10-31T11:11:43.4957158\"\n}"
+						}
+					]
+				},
+				{
+					"name": "로그아웃",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJja3VuZWFtQGdtYWlsLmNvbSIsIm5hbWUiOiLqtIDrpqzsnpAiLCJyb2xlIjoiQURNSU4iLCJzdGF0dXMiOiJBQ1RJVkUiLCJzY2hvb2xDb2RlIjoiNzAwMTQ1MyIsImlhdCI6MTc2MTg3NTAyMywiZXhwIjoxNzYxODc4NjIzfQ.WzBZPFfqedtngPa-2RO0rARVPrPjRR56roGtxAcQrQZDcPdqX2cFztDz_oCiDYThwQCDzWbs3XfKvSS9HjRQQw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/auth/logout",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "로그아웃",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/auth/logout",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 02:12:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"로그아웃 성공\",\n    \"timestamp\": \"2025-10-31T11:12:06.4657705\"\n}"
+						}
+					]
+				},
+				{
+					"name": "토큰 갱신",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\" : \"{{refreshToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/auth/refresh",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "토큰 갱신",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\" : \"{{refreshToken}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/auth/refresh",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 02:12:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJja3VuZWFtQGdtYWlsLmNvbSIsIm5hbWUiOiLqtIDrpqzsnpAiLCJyb2xlIjoiQURNSU4iLCJzdGF0dXMiOiJBQ1RJVkUiLCJzY2hvb2xDb2RlIjoiNzAwMTQ1MyIsImlhdCI6MTc2MTg3Njc3NiwiZXhwIjoxNzYxODgwMzc2fQ.cZi_m9ixaJO_zsp1eOT5Lt5Oen3xTGuZ5gN4L7KvqGpn9peeHGLHUL3U7nmVH_-QBKRGWOuDfkOM8gT2ZBH1Aw\",\n        \"refreshToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNzYxODc2NzQ2LCJleHAiOjE3NjI0ODE1NDZ9.V7TbRxJo13LjhA9SRuz_S1KTPxfKs6B0aaR9SXqpmH-RQbVQscaQQffJy_zeHCL-70v9U1tgQlWmlaNICNX60w\",\n        \"expiresIn\": 3600000\n    },\n    \"message\": \"토큰 갱신 성공\",\n    \"timestamp\": \"2025-10-31T11:12:56.3007175\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "회원 등록",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test4@naver.com\",\r\n    \"password\":\"12341234\",\r\n    \"name\":\"테스트유저3\",\r\n    \"mobileNumber\":\"01095487615\",\r\n    \"role\":\"USER\",\r\n    \"schoolCode\":\"7040592\",\r\n    \"description\":\"설명\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "회원 목록조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users?status=ACTIVE",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "USER",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "ACTIVE"
+								},
+								{
+									"key": "keyword",
+									"value": "테스터",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "20",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "회원 목록조회",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/users?status=ACTIVE",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "role",
+											"value": "USER",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "ACTIVE"
+										},
+										{
+											"key": "keyword",
+											"value": "테스터",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "20",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 02:14:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"content\": [\n            {\n                \"id\": 1,\n                \"name\": \"관리자\",\n                \"email\": \"ckuneam@gmail.com\",\n                \"mobileNumber\": \"01042267830\",\n                \"schoolCode\": \"7001453\",\n                \"status\": \"ACTIVE\",\n                \"role\": \"ADMIN\",\n                \"description\": null,\n                \"createDate\": \"2025-10-30T10:42:44.72469\",\n                \"updateDate\": \"2025-10-30T10:42:44.72469\"\n            }\n        ],\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"first\": true,\n        \"last\": true\n    },\n    \"timestamp\": \"2025-10-31T11:14:36.4311848\"\n}"
+						}
+					]
+				},
+				{
+					"name": "회원 상세조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "회원 상세조회",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/users/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 02:14:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"관리자\",\n        \"email\": \"ckuneam@gmail.com\",\n        \"mobileNumber\": \"01042267830\",\n        \"schoolCode\": \"7001453\",\n        \"status\": \"ACTIVE\",\n        \"role\": \"ADMIN\",\n        \"description\": null,\n        \"createDate\": \"2025-10-30T10:42:44.72469\",\n        \"updateDate\": \"2025-10-30T10:42:44.72469\"\n    },\n    \"timestamp\": \"2025-10-31T11:14:45.7830213\"\n}"
+						}
+					]
+				},
+				{
+					"name": "회원 정보 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"수정된이름\",\r\n    \"phoneNumber\": \"01012345678\",\r\n    \"schoolCode\": \"7001453\",\r\n    \"status\": \"ACTIVE\",\r\n    \"role\": \"USER\",\r\n    \"description\": \"회원 설명\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "회원 정보 수정",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"수정된이름\",\r\n    \"phoneNumber\": \"01012345678\",\r\n    \"schoolCode\": \"7001453\",\r\n    \"status\": \"ACTIVE\",\r\n    \"role\": \"USER\",\r\n    \"description\": \"회원 설명\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 02:15:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"수정된이름\",\n        \"email\": \"ckuneam@gmail.com\",\n        \"mobileNumber\": \"01042267830\",\n        \"schoolCode\": \"7001453\",\n        \"status\": \"ACTIVE\",\n        \"role\": \"ADMIN\",\n        \"description\": \"회원 설명\",\n        \"createDate\": \"2025-10-30T10:42:44.72469\",\n        \"updateDate\": \"2025-10-30T10:42:44.72469\"\n    },\n    \"message\": \"회원 정보 수정 성공\",\n    \"timestamp\": \"2025-10-31T11:15:54.5959419\"\n}"
+						}
+					]
+				},
+				{
+					"name": "회원 삭제",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/4",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "회원 삭제",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/users/4",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 05:22:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"message\": \"회원 삭제 성공\",\n    \"timestamp\": \"2025-10-31T14:22:16.4645577\"\n}"
+						}
+					]
+				},
+				{
+					"name": "회원 가입 승인",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/3/approve",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3",
+								"approve"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "회원 가입 승인",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/users/3/approve",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"3",
+										"approve"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 05:21:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"테스트유저1\",\n        \"email\": \"test1@naver.com\",\n        \"mobileNumber\": \"01051532454\",\n        \"schoolCode\": \"7040800\",\n        \"status\": \"ACTIVE\",\n        \"role\": \"USER\",\n        \"description\": null,\n        \"createDate\": \"2025-10-31T14:21:12.871519\",\n        \"updateDate\": \"2025-10-31T14:21:12.871519\"\n    },\n    \"message\": \"회원 승인 성공\",\n    \"timestamp\": \"2025-10-31T14:21:25.760992\"\n}"
+						}
+					]
+				},
+				{
+					"name": "회원 가입 거부",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/4/reject",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"4",
+								"reject"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "회원 가입 거부",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/users/4/reject",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"4",
+										"reject"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 05:21:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"테스트유저2\",\n        \"email\": \"test2@naver.com\",\n        \"mobileNumber\": \"01051532654\",\n        \"schoolCode\": \"7040791\",\n        \"status\": \"REJECTED\",\n        \"role\": \"USER\",\n        \"description\": null,\n        \"createDate\": \"2025-10-31T14:21:51.104163\",\n        \"updateDate\": \"2025-10-31T14:21:51.104163\"\n    },\n    \"message\": \"회원 가입 거부 성공\",\n    \"timestamp\": \"2025-10-31T14:21:59.3456121\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CommonCode",
+			"item": [
+				{
+					"name": "코드 그룹 생성",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupCode\": \"TEST_TYPE\",\r\n    \"groupName\": \"테스트 그룹1\",\r\n    \"description\": \"설명1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/groups",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"groups"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "코드 그룹 생성",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"groupCode\": \"TEST_TYPE\",\r\n    \"groupName\": \"테스트 그룹1\",\r\n    \"description\": \"설명1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/groups",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"groups"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 06:09:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"groupCode\": \"TEST_TYPE\",\n        \"groupName\": \"테스트 그룹1\",\n        \"description\": \"설명1\",\n        \"isActive\": true,\n        \"createDate\": \"2025-10-31T15:09:40.684239\",\n        \"codes\": null\n    },\n    \"message\": \"공통코드 그룹이 생성되었습니다\",\n    \"timestamp\": \"2025-10-31T15:09:40.7176195\"\n}"
+						}
+					]
+				},
+				{
+					"name": "코드 그룹 목록 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/groups",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"groups"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "코드 그룹 목록 조회",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/groups",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"groups"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:09:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"groupName\": \"학교 코드\",\n            \"description\": null,\n            \"isActive\": true,\n            \"createDate\": \"2025-10-31T01:47:39.87823\",\n            \"codes\": null\n        },\n        {\n            \"groupCode\": \"BOARD_TYPE\",\n            \"groupName\": \"게시판 유형\",\n            \"description\": \"게시판 유형을 구분하는 코드\",\n            \"isActive\": true,\n            \"createDate\": \"2025-10-31T14:50:59.267814\",\n            \"codes\": null\n        },\n        {\n            \"groupCode\": \"TEST_TYPE\",\n            \"groupName\": \"테스트 그룹1\",\n            \"description\": \"설명1\",\n            \"isActive\": true,\n            \"createDate\": \"2025-10-31T15:09:40.684239\",\n            \"codes\": null\n        }\n    ],\n    \"timestamp\": \"2025-10-31T16:09:03.8635369\"\n}"
+						}
+					]
+				},
+				{
+					"name": "활성화된 코드 그룹 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/groups/active",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"groups",
+								"active"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "활성화된 코드 그룹 조회",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/groups/active",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"groups",
+										"active"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:09:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"groupName\": \"학교 코드\",\n            \"description\": null,\n            \"isActive\": true,\n            \"createDate\": \"2025-10-31T01:47:39.87823\",\n            \"codes\": null\n        },\n        {\n            \"groupCode\": \"BOARD_TYPE\",\n            \"groupName\": \"게시판 유형\",\n            \"description\": \"게시판 유형을 구분하는 코드\",\n            \"isActive\": true,\n            \"createDate\": \"2025-10-31T14:50:59.267814\",\n            \"codes\": null\n        },\n        {\n            \"groupCode\": \"TEST_TYPE\",\n            \"groupName\": \"테스트 그룹1\",\n            \"description\": \"설명1\",\n            \"isActive\": true,\n            \"createDate\": \"2025-10-31T15:09:40.684239\",\n            \"codes\": null\n        }\n    ],\n    \"timestamp\": \"2025-10-31T16:09:20.5475698\"\n}"
+						}
+					]
+				},
+				{
+					"name": "코드 그룹 상세 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/groups/SCHOOL_CODE",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"groups",
+								"SCHOOL_CODE"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "코드 그룹 상세 조회",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/groups/SCHOOL_CODE",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"groups",
+										"SCHOOL_CODE"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:09:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"groupCode\": \"SCHOOL_CODE\",\n        \"groupName\": \"학교 코드\",\n        \"description\": null,\n        \"isActive\": true,\n        \"createDate\": \"2025-10-31T01:47:39.87823\",\n        \"codes\": [\n            {\n                \"id\": 24,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7008108\",\n                \"codeName\": \"세명대학교\",\n                \"displayOrder\": 23,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 6,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7008133\",\n                \"codeName\": \"경기대학교\",\n                \"displayOrder\": 5,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 2,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7008143\",\n                \"codeName\": \"가천대학교\",\n                \"displayOrder\": 1,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 3,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040568\",\n                \"codeName\": \"가톨릭대학교\",\n                \"displayOrder\": 2,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 4,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040570\",\n                \"codeName\": \"강원대학교\",\n                \"displayOrder\": 3,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 5,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040577\",\n                \"codeName\": \"건국대학교\",\n                \"displayOrder\": 4,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 7,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040591\",\n                \"codeName\": \"경북대학교\",\n                \"displayOrder\": 6,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 8,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040592\",\n                \"codeName\": \"경상국립대학교\",\n                \"displayOrder\": 7,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 9,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040594\",\n                \"codeName\": \"경성대학교\",\n                \"displayOrder\": 8,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 10,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040596\",\n                \"codeName\": \"경희대학교\",\n                \"displayOrder\": 9,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 11,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040601\",\n                \"codeName\": \"계명대학교\",\n                \"displayOrder\": 10,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 12,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040604\",\n                \"codeName\": \"고려대학교\",\n                \"displayOrder\": 11,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 13,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040642\",\n                \"codeName\": \"단국대학교\",\n                \"displayOrder\": 12,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 14,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040643\",\n                \"codeName\": \"대구가톨릭대학교\",\n                \"displayOrder\": 13,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 15,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040646\",\n                \"codeName\": \"덕성여자대학교\",\n                \"displayOrder\": 14,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 16,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040667\",\n                \"codeName\": \"동국대학교\",\n                \"displayOrder\": 15,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 17,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040668\",\n                \"codeName\": \"동덕여자대학교\",\n                \"displayOrder\": 16,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 18,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040675\",\n                \"codeName\": \"목포대학교\",\n                \"displayOrder\": 17,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 19,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040698\",\n                \"codeName\": \"삼육대학교\",\n                \"displayOrder\": 18,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 20,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040704\",\n                \"codeName\": \"상명대학교\",\n                \"displayOrder\": 19,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 21,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040706\",\n                \"codeName\": \"서울대학교\",\n                \"displayOrder\": 20,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 22,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040708\",\n                \"codeName\": \"서울여자대학교\",\n                \"displayOrder\": 21,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 23,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040710\",\n                \"codeName\": \"성균관대학교\",\n                \"displayOrder\": 22,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 25,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040724\",\n                \"codeName\": \"숙명여자대학교\",\n                \"displayOrder\": 24,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 26,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040725\",\n                \"codeName\": \"순천대학교\",\n                \"displayOrder\": 25,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 27,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040729\",\n                \"codeName\": \"숭실대학교\",\n                \"displayOrder\": 26,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 28,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040741\",\n                \"codeName\": \"아주대학교\",\n                \"displayOrder\": 27,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 29,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040749\",\n                \"codeName\": \"연세대학교\",\n                \"displayOrder\": 28,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 30,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040750\",\n                \"codeName\": \"영남대학교\",\n                \"displayOrder\": 29,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 31,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040774\",\n                \"codeName\": \"원광대학교\",\n                \"displayOrder\": 30,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 32,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040791\",\n                \"codeName\": \"이화여자대학교\",\n                \"displayOrder\": 31,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 33,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040800\",\n                \"codeName\": \"인제대학교\",\n                \"displayOrder\": 32,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 34,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040813\",\n                \"codeName\": \"전남대학교\",\n                \"displayOrder\": 33,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 35,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040814\",\n                \"codeName\": \"전북대학교\",\n                \"displayOrder\": 34,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 36,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040818\",\n                \"codeName\": \"조선대학교\",\n                \"displayOrder\": 35,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 37,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040820\",\n                \"codeName\": \"중앙대학교\",\n                \"displayOrder\": 36,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            },\n            {\n                \"id\": 38,\n                \"groupCode\": \"SCHOOL_CODE\",\n                \"code\": \"7040847\",\n                \"codeName\": \"충남대학교\",\n                \"displayOrder\": 37,\n                \"isActive\": true,\n                \"extraValue1\": null,\n                \"extraValue2\": null,\n                \"createDate\": \"2025-10-31T02:04:53.077839\",\n                \"updateDate\": \"2025-10-31T02:04:53.077839\"\n            }\n        ]\n    },\n    \"timestamp\": \"2025-10-31T16:09:42.8097417\"\n}"
+						}
+					]
+				},
+				{
+					"name": "코드 그룹 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupName\": \"수정된 그룹명\",\r\n    \"description\": \"설명 수정\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/groups/BOARD_TYPE",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"groups",
+								"BOARD_TYPE"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "코드 그룹 수정",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"groupName\": \"수정된 그룹명\",\r\n    \"description\": \"설명 수정\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/groups/BOARD_TYPE",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"groups",
+										"BOARD_TYPE"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:10:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"groupCode\": \"BOARD_TYPE\",\n        \"groupName\": \"수정된 그룹명\",\n        \"description\": \"설명 수정\",\n        \"isActive\": true,\n        \"createDate\": \"2025-10-31T14:50:59.267814\",\n        \"codes\": null\n    },\n    \"message\": \"공통코드 그룹이 수정되었습니다\",\n    \"timestamp\": \"2025-10-31T16:10:05.8268882\"\n}"
+						}
+					]
+				},
+				{
+					"name": "코드 그룹 활성화",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/groups/BOARD_TYPE/activate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"groups",
+								"BOARD_TYPE",
+								"activate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "코드 그룹 활성화",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/groups/BOARD_TYPE/activate",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"groups",
+										"BOARD_TYPE",
+										"activate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:10:16 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"groupCode\": \"BOARD_TYPE\",\n        \"groupName\": \"수정된 그룹명\",\n        \"description\": \"설명 수정\",\n        \"isActive\": true,\n        \"createDate\": \"2025-10-31T14:50:59.267814\",\n        \"codes\": null\n    },\n    \"message\": \"공통코드 그룹이 활성화되었습니다\",\n    \"timestamp\": \"2025-10-31T16:10:16.5101404\"\n}"
+						}
+					]
+				},
+				{
+					"name": "코드 그룹 비활성화",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/groups/BOARD_TYPE/deactivate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"groups",
+								"BOARD_TYPE",
+								"deactivate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "코드 그룹 비활성화",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/groups/BOARD_TYPE/deactivate",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"groups",
+										"BOARD_TYPE",
+										"deactivate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:10:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"groupCode\": \"BOARD_TYPE\",\n        \"groupName\": \"수정된 그룹명\",\n        \"description\": \"설명 수정\",\n        \"isActive\": false,\n        \"createDate\": \"2025-10-31T14:50:59.267814\",\n        \"codes\": null\n    },\n    \"message\": \"공통코드 그룹이 비활성화되었습니다\",\n    \"timestamp\": \"2025-10-31T16:10:26.4459869\"\n}"
+						}
+					]
+				},
+				{
+					"name": "코드 그룹 삭제",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/groups/TEST_TYPE",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"groups",
+								"TEST_TYPE"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "코드 그룹 삭제",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/groups/TEST_TYPE",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"groups",
+										"TEST_TYPE"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:10:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"공통코드 그룹이 삭제되었습니다\",\n    \"timestamp\": \"2025-10-31T16:10:42.4153306\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 생성",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupCode\": \"BOARD_TYPE\",\r\n    \"code\": \"NOTICE\",\r\n    \"codeName\":\"공지사항\",\r\n    \"displayOrder\": 1,\r\n    \"extraValue1\": \"#FF0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 생성",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"groupCode\": \"BOARD_TYPE\",\r\n    \"code\": \"NOTICE\",\r\n    \"codeName\":\"공지사항\",\r\n    \"displayOrder\": 1,\r\n    \"extraValue1\": \"#FF0000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:11:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 40,\n        \"groupCode\": \"BOARD_TYPE\",\n        \"code\": \"NOTICE\",\n        \"codeName\": \"공지사항\",\n        \"displayOrder\": 1,\n        \"isActive\": true,\n        \"extraValue1\": \"#FF0000\",\n        \"extraValue2\": null,\n        \"createDate\": \"2025-10-31T16:11:54.5869819\",\n        \"updateDate\": \"2025-10-31T16:11:54.5869819\"\n    },\n    \"message\": \"공통코드가 생성되었습니다\",\n    \"timestamp\": \"2025-10-31T16:11:54.6036956\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 조회 (활성 그룹)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/group/SCHOOL_CODE",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"group",
+								"SCHOOL_CODE"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 조회 (활성 그룹)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/group/SCHOOL_CODE",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"group",
+										"SCHOOL_CODE"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:12:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7008143\",\n            \"codeName\": \"가천대학교\",\n            \"displayOrder\": 1,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 3,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040568\",\n            \"codeName\": \"가톨릭대학교\",\n            \"displayOrder\": 2,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 4,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040570\",\n            \"codeName\": \"강원대학교\",\n            \"displayOrder\": 3,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 5,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040577\",\n            \"codeName\": \"건국대학교\",\n            \"displayOrder\": 4,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 6,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7008133\",\n            \"codeName\": \"경기대학교\",\n            \"displayOrder\": 5,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 7,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040591\",\n            \"codeName\": \"경북대학교\",\n            \"displayOrder\": 6,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 8,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040592\",\n            \"codeName\": \"경상국립대학교\",\n            \"displayOrder\": 7,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 9,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040594\",\n            \"codeName\": \"경성대학교\",\n            \"displayOrder\": 8,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 10,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040596\",\n            \"codeName\": \"경희대학교\",\n            \"displayOrder\": 9,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 11,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040601\",\n            \"codeName\": \"계명대학교\",\n            \"displayOrder\": 10,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 12,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040604\",\n            \"codeName\": \"고려대학교\",\n            \"displayOrder\": 11,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 13,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040642\",\n            \"codeName\": \"단국대학교\",\n            \"displayOrder\": 12,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 14,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040643\",\n            \"codeName\": \"대구가톨릭대학교\",\n            \"displayOrder\": 13,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 15,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040646\",\n            \"codeName\": \"덕성여자대학교\",\n            \"displayOrder\": 14,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 16,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040667\",\n            \"codeName\": \"동국대학교\",\n            \"displayOrder\": 15,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 17,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040668\",\n            \"codeName\": \"동덕여자대학교\",\n            \"displayOrder\": 16,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 18,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040675\",\n            \"codeName\": \"목포대학교\",\n            \"displayOrder\": 17,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 19,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040698\",\n            \"codeName\": \"삼육대학교\",\n            \"displayOrder\": 18,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 20,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040704\",\n            \"codeName\": \"상명대학교\",\n            \"displayOrder\": 19,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 21,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040706\",\n            \"codeName\": \"서울대학교\",\n            \"displayOrder\": 20,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 22,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040708\",\n            \"codeName\": \"서울여자대학교\",\n            \"displayOrder\": 21,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 23,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040710\",\n            \"codeName\": \"성균관대학교\",\n            \"displayOrder\": 22,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 24,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7008108\",\n            \"codeName\": \"세명대학교\",\n            \"displayOrder\": 23,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 25,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040724\",\n            \"codeName\": \"숙명여자대학교\",\n            \"displayOrder\": 24,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 26,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040725\",\n            \"codeName\": \"순천대학교\",\n            \"displayOrder\": 25,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 27,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040729\",\n            \"codeName\": \"숭실대학교\",\n            \"displayOrder\": 26,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 28,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040741\",\n            \"codeName\": \"아주대학교\",\n            \"displayOrder\": 27,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 29,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040749\",\n            \"codeName\": \"연세대학교\",\n            \"displayOrder\": 28,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 30,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040750\",\n            \"codeName\": \"영남대학교\",\n            \"displayOrder\": 29,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 31,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040774\",\n            \"codeName\": \"원광대학교\",\n            \"displayOrder\": 30,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 32,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040791\",\n            \"codeName\": \"이화여자대학교\",\n            \"displayOrder\": 31,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 33,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040800\",\n            \"codeName\": \"인제대학교\",\n            \"displayOrder\": 32,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 34,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040813\",\n            \"codeName\": \"전남대학교\",\n            \"displayOrder\": 33,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 35,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040814\",\n            \"codeName\": \"전북대학교\",\n            \"displayOrder\": 34,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 36,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040818\",\n            \"codeName\": \"조선대학교\",\n            \"displayOrder\": 35,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 37,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040820\",\n            \"codeName\": \"중앙대학교\",\n            \"displayOrder\": 36,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        },\n        {\n            \"id\": 38,\n            \"groupCode\": \"SCHOOL_CODE\",\n            \"code\": \"7040847\",\n            \"codeName\": \"충남대학교\",\n            \"displayOrder\": 37,\n            \"isActive\": true,\n            \"extraValue1\": null,\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T02:04:53.077839\",\n            \"updateDate\": \"2025-10-31T02:04:53.077839\"\n        }\n    ],\n    \"timestamp\": \"2025-10-31T16:12:05.0254318\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 조회 (전체 그룹)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/group/BOARD_TYPE/all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"group",
+								"BOARD_TYPE",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 조회 (전체 그룹)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/group/BOARD_TYPE/all",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"group",
+										"BOARD_TYPE",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:12:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 40,\n            \"groupCode\": \"BOARD_TYPE\",\n            \"code\": \"NOTICE\",\n            \"codeName\": \"공지사항\",\n            \"displayOrder\": 1,\n            \"isActive\": true,\n            \"extraValue1\": \"#FF0000\",\n            \"extraValue2\": null,\n            \"createDate\": \"2025-10-31T16:11:54.586982\",\n            \"updateDate\": \"2025-10-31T16:11:54.586982\"\n        }\n    ],\n    \"timestamp\": \"2025-10-31T16:12:19.154296\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 상세 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 상세 조회",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:12:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"groupCode\": \"SCHOOL_CODE\",\n        \"code\": \"7008143\",\n        \"codeName\": \"가천대학교\",\n        \"displayOrder\": 1,\n        \"isActive\": true,\n        \"extraValue1\": null,\n        \"extraValue2\": null,\n        \"createDate\": \"2025-10-31T02:04:53.077839\",\n        \"updateDate\": \"2025-10-31T02:04:53.077839\"\n    },\n    \"timestamp\": \"2025-10-31T16:12:46.6914722\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"7008143\",\r\n    \"codeName\": \"가천대학교\",\r\n    \"displayOrder\": 1,\r\n    \"extraValue1\": \"#FF6600\",\r\n    \"extraValue2\": \"수정\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 수정",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\": \"7008143\",\r\n    \"codeName\": \"가천대학교\",\r\n    \"displayOrder\": 1,\r\n    \"extraValue1\": \"#FF6600\",\r\n    \"extraValue2\": \"수정\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/2",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:15:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"groupCode\": \"SCHOOL_CODE\",\n        \"code\": \"7008143\",\n        \"codeName\": \"가천대학교\",\n        \"displayOrder\": 1,\n        \"isActive\": true,\n        \"extraValue1\": \"#FF6600\",\n        \"extraValue2\": \"수정\",\n        \"createDate\": \"2025-10-31T02:04:53.077839\",\n        \"updateDate\": \"2025-10-31T16:14:39.470938\"\n    },\n    \"message\": \"공통코드가 수정되었습니다\",\n    \"timestamp\": \"2025-10-31T16:15:40.6902796\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 활성화",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/2/activate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"2",
+								"activate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 활성화",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/2/activate",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"2",
+										"activate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:15:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"groupCode\": \"SCHOOL_CODE\",\n        \"code\": \"7008143\",\n        \"codeName\": \"가천대학교\",\n        \"displayOrder\": 1,\n        \"isActive\": true,\n        \"extraValue1\": \"#FF6600\",\n        \"extraValue2\": \"수정\",\n        \"createDate\": \"2025-10-31T02:04:53.077839\",\n        \"updateDate\": \"2025-10-31T16:14:39.470938\"\n    },\n    \"message\": \"공통코드가 활성화되었습니다\",\n    \"timestamp\": \"2025-10-31T16:15:56.6786436\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 비활성화",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/2/deactivate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"2",
+								"deactivate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 비활성화",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/2/deactivate",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"2",
+										"deactivate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:16:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"groupCode\": \"SCHOOL_CODE\",\n        \"code\": \"7008143\",\n        \"codeName\": \"가천대학교\",\n        \"displayOrder\": 1,\n        \"isActive\": false,\n        \"extraValue1\": \"#FF6600\",\n        \"extraValue2\": \"수정\",\n        \"createDate\": \"2025-10-31T02:04:53.077839\",\n        \"updateDate\": \"2025-10-31T16:14:39.470938\"\n    },\n    \"message\": \"공통코드가 비활성화되었습니다\",\n    \"timestamp\": \"2025-10-31T16:16:07.1537623\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 삭제",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/40",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"40"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 삭제",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/40",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"40"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:16:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"공통코드가 삭제되었습니다\",\n    \"timestamp\": \"2025-10-31T16:16:28.8937853\"\n}"
+						}
+					]
+				},
+				{
+					"name": "공통코드 표시순서 변경",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/common-codes/2/display-order?displayOrder=1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"common-codes",
+								"2",
+								"display-order"
+							],
+							"query": [
+								{
+									"key": "displayOrder",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "공통코드 표시순서 변경",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/common-codes/2/display-order?displayOrder=1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"common-codes",
+										"2",
+										"display-order"
+									],
+									"query": [
+										{
+											"key": "displayOrder",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:17:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"groupCode\": \"SCHOOL_CODE\",\n        \"code\": \"7008143\",\n        \"codeName\": \"가천대학교\",\n        \"displayOrder\": 1,\n        \"isActive\": false,\n        \"extraValue1\": \"#FF6600\",\n        \"extraValue2\": \"수정\",\n        \"createDate\": \"2025-10-31T02:04:53.077839\",\n        \"updateDate\": \"2025-10-31T16:16:50.331862\"\n    },\n    \"message\": \"표시 순서가 변경되었습니다\",\n    \"timestamp\": \"2025-10-31T16:17:01.8925057\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pharmacy",
+			"item": [
+				{
+					"name": "약국 목록 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/pharmacies",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"pharmacies"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "20",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "약국 목록 조회",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/pharmacies",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"pharmacies"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "20",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:34:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"content\": [\n            {\n                \"id\": 2,\n                \"businessNumber\": \"5468246875\",\n                \"name\": \"보령약국(방배)\",\n                \"address\": \"서울특별시 서초구 방배동 66\",\n                \"telNumber\": \"026587787\",\n                \"chargeUserNo\": 2,\n                \"isVisited\": false,\n                \"createDate\": \"2025-10-31T07:20:02.676869\",\n                \"updateDate\": \"2025-10-31T07:20:02.676869\"\n            },\n            {\n                \"id\": 1,\n                \"businessNumber\": \"1234567890\",\n                \"name\": \"방배약국\",\n                \"address\": \"서울특별시 서초구 방배동 123-123\",\n                \"telNumber\": \"024347863\",\n                \"chargeUserNo\": null,\n                \"isVisited\": false,\n                \"createDate\": \"2025-10-31T07:19:19.744219\",\n                \"updateDate\": \"2025-10-31T07:19:19.744219\"\n            }\n        ],\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"totalElements\": 2,\n        \"totalPages\": 1,\n        \"first\": true,\n        \"last\": true\n    },\n    \"timestamp\": \"2025-10-31T16:34:17.5661639\"\n}"
+						}
+					]
+				},
+				{
+					"name": "약국 상세 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/pharmacies/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"pharmacies",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "약국 상세 조회",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/pharmacies/1",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"pharmacies",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:49:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"businessNumber\": \"1234567890\",\n        \"name\": \"방배약국\",\n        \"address\": \"서울특별시 서초구 방배동 123-123\",\n        \"telNumber\": \"024347863\",\n        \"chargeUserNo\": null,\n        \"isVisited\": false,\n        \"createDate\": \"2025-10-31T07:19:19.744219\",\n        \"updateDate\": \"2025-10-31T07:19:19.744219\"\n    },\n    \"timestamp\": \"2025-10-31T16:49:19.9967905\"\n}"
+						}
+					]
+				},
+				{
+					"name": "약국 등록",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"테스트약국\",\r\n    \"businessNumber\": \"1234567890\",\r\n    \"address\": \"서울시 강남구\",\r\n    \"telNumber\": \"0212345678\",\r\n    \"ownerName\": \"약국주인\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/pharmacies",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"pharmacies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "약국 등록",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"테스트약국\",\r\n    \"businessNumber\": \"1234567890\",\r\n    \"address\": \"서울시 강남구\",\r\n    \"telNumber\": \"0212345678\",\r\n    \"ownerName\": \"약국주인\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/pharmacies",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"pharmacies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:55:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 3,\n        \"businessNumber\": \"1234567890\",\n        \"name\": \"테스트약국\",\n        \"address\": \"서울시 강남구\",\n        \"telNumber\": \"0212345678\",\n        \"chargeUserNo\": 1,\n        \"isVisited\": false,\n        \"createDate\": \"2025-10-31T16:55:11.6795107\",\n        \"updateDate\": \"2025-10-31T16:55:11.6795107\"\n    },\n    \"message\": \"약국 등록 성공\",\n    \"timestamp\": \"2025-10-31T16:55:11.7458567\"\n}"
+						}
+					]
+				},
+				{
+					"name": "약국 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"수정된약국명\",\r\n    \"businessNumber\": \"1234567890\",\r\n    \"address\": \"서울시 서초구\",\r\n    \"telNumber\": \"0298765432\",\r\n    \"ownerName\": \"새주인\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/pharmacies/3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"pharmacies",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "약국 수정",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"수정된약국명\",\r\n    \"businessNumber\": \"1234567890\",\r\n    \"address\": \"서울시 서초구\",\r\n    \"telNumber\": \"0298765432\",\r\n    \"ownerName\": \"새주인\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/pharmacies/3",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"pharmacies",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:58:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 3,\n        \"businessNumber\": \"1234567890\",\n        \"name\": \"수정된약국명\",\n        \"address\": \"서울시 서초구\",\n        \"telNumber\": \"0298765432\",\n        \"chargeUserNo\": 1,\n        \"isVisited\": false,\n        \"createDate\": \"2025-10-31T16:55:11.679511\",\n        \"updateDate\": \"2025-10-31T16:55:11.679511\"\n    },\n    \"message\": \"약국 수정 성공\",\n    \"timestamp\": \"2025-10-31T16:58:22.2122651\"\n}"
+						}
+					]
+				},
+				{
+					"name": "약국 삭제",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/pharmacies/3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"pharmacies",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "약국 삭제",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/api/pharmacies/3",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"pharmacies",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 31 Oct 2025 07:58:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"약국 삭제 성공\",\n    \"timestamp\": \"2025-10-31T16:58:37.5351449\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Board",
+			"item": [
+				{
+					"name": "게시글 작성",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"boardType\": \"NOTICE\",\r\n    \"title\": \"공지사항 제목\",\r\n    \"content\": \"공지사항 내용입니다.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/boards",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"boards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "게시글 목록 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/boards",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"boards"
+							],
+							"query": [
+								{
+									"key": "boardType",
+									"value": "NOTICE",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "20",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "게시글 상세 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/boards/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"boards",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "게시글 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"boardType\": \"NOTICE\",\r\n    \"title\": \"수정된 제목\",\r\n    \"content\": \"수정된 내용입니다.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/boards/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"boards",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "게시글 삭제",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/boards/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"boards",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "활성화된 설문지 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/reports/survey/active",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"survey",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "특정 설문지 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/reports/survey/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"survey",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "설문 응답 작성",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surveyNo\": 1,\r\n    \"pharmacyNo\": 1,\r\n    \"answers\": [\r\n        {\r\n            \"questionNo\": 1,\r\n            \"answer\": \"응답 내용 1\"\r\n        },\r\n        {\r\n            \"questionNo\": 2,\r\n            \"answer\": \"응답 내용 2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/reports",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "약국별 설문 응답 목록",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/reports/pharmacy/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"pharmacy",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "설문 응답 상세 조회",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/reports/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "설문 응답 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"questionNo\": 1,\r\n            \"answer\": \"수정된 응답 1\"\r\n        },\r\n        {\r\n            \"questionNo\": 2,\r\n            \"answer\": \"수정된 응답 2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/reports/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "설문 응답 삭제",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/reports/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "약국별 회원 수 통계",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin.accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/statistics/pharmacy-members",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"pharmacy-members"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "localhost:8080"
+		},
+		{
+			"key": "admin.accessToken",
+			"value": ""
+		},
+		{
+			"key": "user.accessToken",
+			"value": ""
+		},
+		{
+			"key": "viewer.accessToken",
+			"value": ""
+		},
+		{
+			"key": "refreshToken",
+			"value": ""
+		}
+	]
+}
