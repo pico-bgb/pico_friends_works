@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: pico_friends_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # PostgreSQL은 원격 개발 서버 사용 (110.165.17.206:5432)
+  # 필요 시 아래 주석을 해제하여 로컬 PostgreSQL 사용 가능
+  # postgres:
+  #   image: postgres:13.16-alpine
+  #   container_name: pico_friends_postgres
+  #   environment:
+  #     POSTGRES_DB: pico_friends_dev
+  #     POSTGRES_USER: pico_friends
+  #     POSTGRES_PASSWORD: pico_friends_dev_2024
+  #     TZ: Asia/Seoul
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U pico_friends -d pico_friends_dev"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+  #   restart: unless-stopped
+
+volumes:
+  redis_data:
+    driver: local
+  # postgres_data:
+  #   driver: local
