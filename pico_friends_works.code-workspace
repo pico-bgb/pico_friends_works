@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "pico_friends_works",
+			"path": "."
+		},
+		{
+			"name": "pico_friends_be",
+			"path": "../pico_friends_be"
+		},
+		{
+			"name": "pico_friends_fe",
+			"path": "../pico_friends_fe"
+		},
+		{
+			"path": "../second-brain/Mobig"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}

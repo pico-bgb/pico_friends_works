@@ -1,6 +1,6 @@
 # Claude Code Skills - PICOFriends 프로젝트
 
-PICOFriends 프로젝트를 위한 Custom Claude Skills 모음입니다.
+PICOFriends 프로젝트를 위한 **15개의 Custom Claude Skills** 모음입니다.
 
 ## 📋 목차
 
@@ -15,7 +15,11 @@ PICOFriends 프로젝트를 위한 Custom Claude Skills 모음입니다.
 
 ## 개요
 
-이 스킬들은 PICOFriends 프로젝트의 문서 관리, Jira 이슈 관리, Confluence 문서 동기화를 자동화합니다.
+이 스킬들은 PICOFriends 프로젝트의 문서 관리, Jira 이슈 관리, Confluence 문서 동기화, Git 워크플로우를 자동화합니다.
+
+**새롭게 추가된 Agent 스킬** 🤖:
+- **atlassian-project-manager**: Jira/Confluence 자동 감지 및 처리
+- **pico-git-commit**: Gitflow + Jira Smart Commit 통합
 
 ### 프로젝트 구조
 
@@ -27,9 +31,12 @@ PICOFriends 프로젝트를 위한 Custom Claude Skills 모음입니다.
 
 ### 기능 카테고리
 
-- **문서 관리**: 로컬 마크다운 문서 동기화 및 검증
-- **Atlassian 통합**: Jira 이슈 및 Confluence 페이지 관리
-- **워크플로우 자동화**: 문서/개발 작업의 전체 프로세스 자동화
+- **문서 관리** (3개): 로컬 마크다운 문서 동기화 및 검증
+- **Atlassian 통합** (6개): Jira 이슈 및 Confluence 페이지 관리 (+ 자동 Agent)
+- **Confluence 통합** (4개): Confluence 페이지 동기화 및 발행
+- **워크플로우 자동화** (2개 + 1개 Agent): 문서/개발 작업의 전체 프로세스 자동화
+
+**총 15개 스킬**: 13개 일반 스킬 + 2개 자동 실행 Agent 🤖
 
 ---
 
@@ -135,6 +142,34 @@ PF 프로젝트 보드 현황 보여줘
 - 이슈 상태 트랜지션
 - 백로그 우선순위 조정
 - Sprint 생성 및 이슈 할당
+
+---
+
+#### [atlassian-project-manager](atlassian-project-manager.md) 🤖
+**자동 실행 Agent**: Jira 이슈 및 Confluence 페이지 통합 관리
+
+**자동 실행 조건:**
+- Jira 이슈 번호 감지 (예: `PF-123`, `PROJ-456`)
+- Jira 링크 공유 (예: `https://company.atlassian.net/browse/PF-123`)
+- Confluence 페이지 링크 공유
+- Atlassian 관련 작업 요청 시
+
+**사용 예시:**
+```
+# 사용자가 명시적으로 호출할 필요 없음 (자동 실행)
+사용자: "PF-42 이슈 상태 확인해줘"
+→ Claude가 자동으로 Agent 실행하여 Jira MCP 도구로 이슈 조회
+
+사용자: "이 Confluence 페이지 요약해줘 [링크]"
+→ Claude가 자동으로 Agent 실행하여 Confluence MCP 도구로 페이지 읽기
+```
+
+**주요 기능:**
+- Jira 이슈 조회/생성/업데이트 (MCP 도구 활용)
+- Confluence 페이지 읽기/수정 (MCP 도구 활용)
+- 이슈-문서 간 연결 관리
+- 워크플로우 상태 전환
+- 전문적인 프로젝트 관리 컨텍스트 제공
 
 ---
 
@@ -245,6 +280,59 @@ Jira 이슈 → Git 브랜치 → 코드 작성 → 테스트 → PR 생성 → 
 - PR 생성 (템플릿 사용)
 - Jira PR 링크 추가
 - Confluence 개발 로그 작성
+
+---
+
+#### [pico-git-commit](pico-git-commit.md) 🤖
+**자동 실행 Agent**: Gitflow + Jira Smart Commit 통합 커밋 관리
+
+**자동 실행 조건:**
+- Staged 파일이 존재할 때
+- "커밋", "commit" 키워드 감지 시
+- `git add` 명령 실행 후
+- 사용자가 커밋 준비 완료를 알릴 때
+
+**사용 예시:**
+```
+# 사용자가 명시적으로 호출할 필요 없음 (자동 실행)
+사용자: "로그인 기능 구현 완료했어, 커밋해줘"
+→ Claude가 자동으로 Agent 실행
+
+Agent 자동 실행 과정:
+1. git status로 Staged 파일 확인
+2. 현재 브랜치명에서 Jira 이슈 키 추출 (예: feature/PF-33-login → PF-33)
+3. git diff --cached로 변경 내용 분석
+4. Conventional Commits 타입 결정 (feat, fix, docs, etc.)
+5. Jira Smart Commit 문법 적용 (#done, #comment)
+6. 커밋 메시지 생성 및 사용자 승인 요청
+   예: "PF-33 feat: 로그인 컴포넌트 구현 #done"
+7. 승인 후 git commit 실행
+```
+
+**주요 기능:**
+- **Gitflow 브랜치 인식**: feature/hotfix/bugfix 브랜치 패턴 자동 감지
+- **Jira 이슈 키 자동 추출**: 브랜치명 또는 최근 커밋에서 이슈 번호 파싱
+- **Conventional Commits**: feat, fix, docs, refactor 등 표준 타입 자동 결정
+- **Jira Smart Commit 통합**:
+  - `#comment`: 상세 설명 추가
+  - `#done`, `#in-progress`, `#todo`: 이슈 상태 자동 전환
+- **다국어 지원**: 한국어/영어 커밋 메시지 자동 생성
+- **커밋 품질 검증**: Atomic commits 권장, 명확한 설명 강제
+
+**Jira Smart Commit 예시:**
+```bash
+# 기본 기능 추가
+PF-33 feat: 로그인 컴포넌트 구현
+
+# 버그 수정 + 코멘트
+PF-45 fix: Storybook router 설정 오류 수정 #comment useRouter mock 추가로 테스트 환경 안정화
+
+# 작업 완료 + 상태 전환
+PF-52 feat: 약국 방문 통계 대시보드 추가 #done
+
+# 작업 시작 표시
+PF-60 feat: GraphQL 스키마 정의 #in-progress
+```
 
 ---
 
