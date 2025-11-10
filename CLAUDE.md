@@ -54,7 +54,7 @@
 │  📚 Documentation (pico_friends_works) - 이 저장소            │
 │     - 기술 문서 (Markdown)                                    │
 │     - 화면설계서 (PowerPoint)                                 │
-│     - Claude Code Skills (15개)                              │
+│     - Claude Code Skills (5개 프로젝트 전용)                 │
 │     - Jira/Confluence 통합                                   │
 │                                                               │
 └─────────────────────────────────────────────────────────────┘
@@ -73,7 +73,7 @@ PICOFriends는 3개의 독립된 Git 저장소로 구성됩니다:
 ```
 pico_friends_works/
 ├── .claude/
-│   └── skills/              # 15개 Claude Code 스킬
+│   └── skills/              # 5개 프로젝트 전용 스킬
 ├── docker/                  # 🐳 Docker 개발 환경
 │   ├── docker-compose.yml  # Redis 컨테이너 설정
 │   ├── DOCKER_SETUP.md     # Docker 사용 가이드
@@ -107,129 +107,113 @@ pico_friends_works/
 
 ## 🛠️ Claude Skills 가이드
 
-이 저장소에는 **15개의 커스텀 Claude Code 스킬**이 구축되어 있습니다. 이 스킬들은 문서화, 프로젝트 관리, 워크플로우 자동화를 위한 강력한 도구입니다.
+### 스킬 구성
 
-### 📂 스킬 위치
-모든 스킬은 [.claude/skills/](.claude/skills/) 디렉토리에 있습니다.
+**로컬 스킬 (5개)** - PICOFriends 프로젝트 전용:
+- 📄 **문서 관리** (2개): docs-sync, spec-helper
+- 📘 **Confluence 통합** (1개): spec-to-confluence
+- 🔄 **워크플로우 자동화** (2개): workflow-docs, workflow-dev
 
-### 📚 스킬 카테고리
+**글로벌 스킬 (6개)** - 모든 프로젝트에서 사용 가능 (`~/.claude/skills/`):
+- 🤖 **atlassian-project-manager** (Agent)
+- 🤖 **pico-git-commit** (Agent)
+- 🖥️ **screen-dev** (PF-17 패턴 기반 화면 자동 개발)
+- 📝 **work-log**
+- 📋 **changelog**
+- 🚀 **release-notes**
 
-#### 1️⃣ **Atlassian 통합** (6개 스킬)
+### 📂 로컬 스킬 (프로젝트 전용)
 
-##### Jira 관리 (4개)
+모든 로컬 스킬은 [.claude/skills/](.claude/skills/) 디렉토리에 있습니다.
 
-| 스킬 | 명령어 | 설명 |
-|------|--------|------|
-| **jira-sync** | `/jira-sync` | Jira 이슈와 로컬 문서 동기화 |
-| **jira-create** | `/jira-create` | 빠른 Jira 이슈 생성 |
-| **jira-report** | `/jira-report` | 프로젝트 진행 상황 리포트 생성 |
-| **jira-board** | `/jira-board` | 스프린트 보드 현황 확인 |
+#### 1️⃣ **문서 관리** (2개)
 
-##### Atlassian Agent (자동 실행)
+| 스킬 | 설명 |
+|------|------|
+| **docs-sync** | 화면설계서 PPT ↔ Markdown 동기화, 문서 일관성 검증 |
+| **spec-helper** | 백엔드/프론트엔드 코드 기반 API/DB/화면 명세서 자동 생성 |
+
+**사용 예시**:
+```bash
+# 화면설계서 동기화
+"화면설계서 PPT와 마크다운 문서 동기화해줘"
+
+# API 명세서 자동 생성
+"AuthController의 API 명세서 작성해줘"
+```
+
+#### 2️⃣ **Confluence 통합** (1개)
+
+| 스킬 | 설명 |
+|------|------|
+| **spec-to-confluence** | PICOFriends 명세서를 Confluence에 자동 발행 (OpenAPI/Swagger, DB ERD, 화면설계서) |
+
+**사용 예시**:
+```bash
+"API 명세서를 Confluence에 업로드해줘"
+```
+
+#### 3️⃣ **워크플로우 자동화** (2개)
+
+| 스킬 | 설명 |
+|------|------|
+| **workflow-docs** | 문서 작업 워크플로우 (문서 수정 → Git 커밋 → Confluence 동기화 → Jira 코멘트) |
+| **workflow-dev** | 개발 작업 워크플로우 (Jira 이슈 → Git 브랜치 → 코드 → 테스트 → PR → Jira 업데이트) |
+
+**사용 예시**:
+```bash
+# 문서 워크플로우
+"화면설계서 v1.6 업데이트 워크플로우 실행"
+
+# 개발 워크플로우
+"PF-44 작업 시작"
+```
+
+### 🌐 글로벌 스킬 (범용)
+
+다음 스킬들은 `~/.claude/skills/`에 있으며, 모든 프로젝트에서 사용 가능합니다:
+
+#### Agent 스킬 (자동 실행)
 
 | 스킬 | 자동 실행 조건 | 설명 |
 |------|----------------|------|
 | **atlassian-project-manager** | Jira 이슈 번호/링크, Confluence 링크 감지 시 | Jira 이슈 조회/생성/업데이트, Confluence 페이지 관리 (MCP 도구 활용) |
-
-**Jira 프로젝트**: [PF Board](https://picoinnov.atlassian.net/jira/software/projects/PF/boards/5/timeline)
-
-**사용 예시**:
-```bash
-# 현재 스프린트의 모든 이슈 동기화
-/jira-sync
-
-# 새로운 버그 이슈 생성
-/jira-create "로그인 후 토큰 만료 에러" --type bug
-
-# 주간 진행 상황 리포트
-/jira-report --period week
-
-# Atlassian Agent는 자동 실행됩니다
-사용자: "PF-42 이슈 상태 확인해줘"
-→ Claude가 자동으로 atlassian-project-manager Agent 실행
-```
-
-##### Confluence 관리 (1개)
-
-| 스킬 | 명령어 | 설명 |
-|------|--------|------|
-| **confluence-sync** | `/confluence-sync` | Markdown 문서를 Confluence 페이지로 업로드 |
-
-**사용 예시**:
-```bash
-# API 명세서를 Confluence에 업로드
-/confluence-sync docs_new/05_api_specification.md
-```
-
-#### 2️⃣ **Git 워크플로우** (1개 스킬)
-
-##### Git Commit Agent (자동 실행)
-
-| 스킬 | 자동 실행 조건 | 설명 |
-|------|----------------|------|
 | **pico-git-commit** | Staged 파일 존재 시, "커밋" 키워드 감지 시 | Gitflow + Jira Smart Commit 통합 커밋 메시지 자동 생성 |
 
 **사용 예시**:
 ```bash
-# Agent는 자동 실행됩니다
+# Atlassian Agent는 자동 실행됩니다
+사용자: "PF-42 이슈 상태 확인해줘"
+→ Claude가 자동으로 atlassian-project-manager Agent 실행
+
+# Git Commit Agent는 자동 실행됩니다
 사용자: "로그인 기능 구현 완료했어, 커밋해줘"
 → Claude가 자동으로 pico-git-commit Agent 실행
-→ 브랜치명에서 이슈 키 추출 (예: feature/PF-33-login → PF-33)
-→ Conventional Commits + Jira Smart Commit 형식으로 메시지 생성
 → 예: "PF-33 feat: 로그인 컴포넌트 구현 #done"
 ```
 
-#### 3️⃣ **문서 자동화** (3개 스킬)
+**Jira 프로젝트**: [PF Board](https://picoinnov.atlassian.net/jira/software/projects/PF/boards/5/timeline)
 
-| 스킬 | 명령어 | 설명 |
-|------|--------|------|
-| **docs-sync** | `/docs-sync` | Markdown ↔ PPT ↔ Confluence 동기화 |
-| **spec-helper** | `/spec-helper` | API/DB/화면 명세서 자동 생성 |
-| **changelog** | `/changelog` | Git 커밋 기반 CHANGELOG.md 생성 |
+#### 유틸리티 스킬
 
-**사용 예시**:
-```bash
-# 최신 화면설계서를 Markdown으로 변환
-/docs-sync --from ppt --to markdown 화면설계서/251105_v1.6.pptx
-
-# 백엔드 코드에서 API 명세서 자동 생성
-/spec-helper --type api --source ../pico_friends_be
-
-# 최근 10개 커밋으로 CHANGELOG 업데이트
-/changelog --commits 10
-```
-
-#### 4️⃣ **워크플로우 자동화** (2개 스킬)
-
-| 스킬 | 명령어 | 설명 |
-|------|--------|------|
-| **workflow-docs** | `/workflow-docs` | 문서화 워크플로우 (Jira → 작성 → Confluence) |
-| **workflow-dev** | `/workflow-dev` | 개발 워크플로우 (Jira → 개발 → PR → 문서) |
+| 스킬 | 설명 |
+|------|------|
+| **work-log** | AI 작업 로그를 Obsidian Daily_AI에 생성 |
+| **changelog** | Git 커밋 로그 기반 CHANGELOG.md 자동 생성 |
+| **release-notes** | Jira와 Git 기반 릴리스 노트 자동 생성 |
+| **screen-dev** | PF-17 패턴 기반 신규 화면 자동 개발 (7단계 워크플로우) |
 
 **사용 예시**:
 ```bash
-# API 명세서 작성 및 배포 워크플로우
-/workflow-docs PF-25
-
-# 기능 개발 풀 워크플로우 (이슈부터 배포까지)
-/workflow-dev PF-30 --feature "방문 통계 대시보드"
-```
-
-#### 5️⃣ **릴리스 관리** (1개 스킬)
-
-| 스킬 | 명령어 | 설명 |
-|------|--------|------|
-| **release-notes** | `/release-notes` | 릴리스 노트 자동 생성 (Jira + Git) |
-
-**사용 예시**:
-```bash
-# v1.2.0 릴리스 노트 생성
-/release-notes --version 1.2.0 --from v1.1.0 --to main
+"작업 로그 남겨줘"
+"최근 1개월 변경사항으로 CHANGELOG 업데이트"
+"v1.5.0 릴리스 노트 생성"
+"PF-42 약국 관리 화면 개발해줘"
 ```
 
 ### 🎓 스킬 학습 가이드
 
-스킬의 상세 사용법은 [.claude/skills/README.md](.claude/skills/README.md)를 참조하세요. 각 스킬 파일에도 구체적인 사용 예시가 포함되어 있습니다.
+스킬의 상세 사용법은 [.claude/skills/README.md](.claude/skills/README.md)를 참조하세요.
 
 ---
 
@@ -472,11 +456,12 @@ Jira 이슈: PF-XX (Bug)
 
 Claude는 다음 상황에서 자동으로 스킬을 사용할 것을 권장합니다:
 
-1. **Jira 이슈 번호 언급 시** → `/jira-sync PF-XX` 자동 실행
-2. **API 변경 후** → `/spec-helper --type api` 자동 실행
-3. **DB 스키마 변경 후** → `/spec-helper --type database` 자동 실행
-4. **릴리스 전** → `/changelog` 및 `/release-notes` 실행
-5. **문서 최종 승인 후** → `/confluence-sync` 실행
+1. **Jira 이슈 번호 언급 시** → `atlassian-project-manager` Agent 자동 실행
+2. **커밋 요청 시** → `pico-git-commit` Agent 자동 실행
+3. **API 변경 후** → `spec-helper` 스킬 실행
+4. **DB 스키마 변경 후** → `spec-helper` 스킬 실행
+5. **릴리스 전** → `changelog` 및 `release-notes` 스킬 실행
+6. **문서 최종 승인 후** → `spec-to-confluence` 스킬 실행
 
 ### 프로젝트 규칙 및 제약사항
 
