@@ -1,44 +1,60 @@
-version: '3.8'
+name: pico-friends
 
 services:
-  redis:
-    image: redis:7.2-alpine
-    container_name: pico_friends_redis
+  backend:
+    build:
+      context: ./spring-app
+      dockerfile: Dockerfile
+    container_name: pico-friends-api
     ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    command: redis-server --appendonly yes
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    restart: unless-stopped
+      - "7070:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=local
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    networks:
+      - pico-friends
 
-  # PostgreSQL은 원격 개발 서버 사용 (110.165.17.206:5432)
-  # 필요 시 아래 주석을 해제하여 로컬 PostgreSQL 사용 가능
-  # postgres:
-  #   image: postgres:13.16-alpine
-  #   container_name: pico_friends_postgres
-  #   environment:
-  #     POSTGRES_DB: pico_friends_dev
-  #     POSTGRES_USER: pico_friends
-  #     POSTGRES_PASSWORD: pico_friends_dev_2024
-  #     TZ: Asia/Seoul
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - postgres_data:/var/lib/postgresql/data
-  #   healthcheck:
-  #     test: ["CMD-SHELL", "pg_isready -U pico_friends -d pico_friends_dev"]
-  #     interval: 10s
-  #     timeout: 5s
-  #     retries: 5
-  #   restart: unless-stopped
+  frontend:
+    build:
+      context: ./nextjs-app
+      dockerfile: Dockerfile
+    container_name: pico-friends-web
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://110.165.17.206:7070
+    depends_on:
+      - backend
+    networks:
+      - pico-friends
+
+  redis:
+    image: redis:7-alpine
+    container_name: pico-friends-redis
+    # ports:
+    #   - "6379:6379"  # 외부 노출 제거 (네트워크 내부에서만 통신)
+    command: docker-entrypoint.sh redis-server
+    networks:
+      - pico-friends
+
+  storybook:
+    build:
+      context: ./storybook-app
+      dockerfile: Dockerfile
+    container_name: pico-friends-storybook
+    ports:
+      - "6006:80"
+    networks:
+      - pico-friends
 
 volumes:
-  redis_data:
-    driver: local
-  # postgres_data:
-  #   driver: local
+  redis-data:
+
+networks:
+  pico-friends:
+    name: pico-friends
+    driver: bridge
